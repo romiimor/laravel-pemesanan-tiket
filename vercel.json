@@ -1,0 +1,16 @@
+{
+    "installCommand": "npm install && composer install --no-dev --prefer-dist",
+    "buildCommand": "npm run build",
+    "outputDirectory": "public",
+    "functions": {
+      "api/index.php": {
+        "runtime": "@php-runtime/vercel-php"
+      }
+    },
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "api/index.php"
+      }
+    ]
+  }
